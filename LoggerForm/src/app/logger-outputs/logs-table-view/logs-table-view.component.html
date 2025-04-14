@@ -1,0 +1,49 @@
+<div class="log-records-container min-h-screen bg-gray-100 p-6">
+  <div class="max-w-5xl mx-auto bg-white shadow-md rounded-2xl p-6">
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">📄 Log Records</h2>
+
+    <!-- Date Range Filter -->
+    <div class="flex space-x-4 mb-6">
+      <div class="flex-1">
+        <label for="startDate" class="block text-sm font-medium text-gray-700">Start Date</label>
+        <input id="startDate" type="date" [(ngModel)]="startDate" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"/>
+      </div>
+      <div class="flex-1">
+        <label for="endDate" class="block text-sm font-medium text-gray-700">End Date</label>
+        <input id="endDate" type="date" [(ngModel)]="endDate" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"/>
+      </div>
+      <div class="flex items-end">
+        <button (click)="applyDateFilter()" class="py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Apply Date Filter</button>
+      </div>
+    </div>
+
+    <div *ngIf="filteredLogs.length > 0; else noLogs" class="log-table-container">
+      <div class="overflow-x-auto">
+        <table class="log-table min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="px-4 py-2 text-left text-sm font-semibold text-gray-600">Message</th>
+              <th class="px-4 py-2 text-left text-sm font-semibold text-gray-600">Level</th>
+              <th class="px-4 py-2 text-left text-sm font-semibold text-gray-600">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr *ngFor="let log of filteredLogs" class="log-row">
+              <td class="px-4 py-3 text-sm text-gray-700">{{ log.content }}</td>
+              <td class="px-4 py-3 text-sm text-blue-600 font-medium">{{ log.logType }}</td>
+              <td class="px-4 py-3 text-sm text-gray-500">{{ log.dateEvent }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <ng-template #noLogs>
+      <p class="text-gray-500">No logs found.</p>
+    </ng-template>
+  </div>
+
+  <div class="mt-4">
+    <a routerLink="/add-log" class="text-blue-600 hover:text-blue-800">Add New Log</a>
+  </div>
+</div>

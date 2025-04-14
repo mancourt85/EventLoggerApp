@@ -1,0 +1,75 @@
+/* Log Form Styles */
+.log-form-container {
+  max-width: 28rem; /* 448px */
+  margin: 2.5rem auto; /* Center the form */
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.log-form-header {
+  text-align: center;
+  font-size: 1.875rem; /* 30px */
+  font-weight: 700;
+  color: #4c51bf; /* Indigo */
+  margin-bottom: 1.5rem;
+}
+
+.log-form-description {
+  text-align: center;
+  color: #4a5568; /* Gray 600 */
+  margin-bottom: 2rem;
+}
+
+.log-form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.log-form-button {
+  width: 100%;
+  background-color: #4c51bf; /* Indigo */
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.log-form-button:hover {
+  background-color: #5a67d8; /* Hover Indigo */
+}
+
+.log-form-success {
+  color: #38a169; /* Green 600 */
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.submitted-logs {
+  margin-top: 2rem;
+}
+
+.submitted-log-item {
+  background-color: #f7fafc; /* Light Gray */
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submitted-log-title {
+  font-weight: bold;
+}
+
+.view-logs-link {
+  margin-top: 1rem;
+  text-align: center;
+  color: #3182ce; /* Blue 600 */
+}
+
+.view-logs-link:hover {
+  color: #2b6cb0; /* Hover Blue */
+}
